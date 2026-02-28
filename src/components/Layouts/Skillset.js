@@ -10,22 +10,18 @@ import { motion } from "framer-motion";
 const skills = [
   {
     title: "Portraits",
-    text: "Capturing authentic emotions and individual character.",
     icon: UserCircle,
   },
   {
     title: "Landscapes",
-    text: "Showcasing the beauty of nature and the world around us.",
     icon: Image,
   },
   {
     title: "Commercial / Corporate",
-    text: "Professional imagery to elevate your brand and showcase your products.",
     icon: Briefcase,
   },
   {
     title: "Weddings",
-    text: "Preserving the most important moments of your special day.",
     icon: Heartbeat,
   },
 ];
@@ -69,7 +65,7 @@ const Skillset = () => {
                               >
                   
                   
-                    <Icon className="w-20 h-20 text-teal-400 drop-shadow-[0_0_15px_rgba(45,212,191,0.35)]"
+                    <Icon className="w-50 h-50 text-teal-400 drop-shadow-[0_0_15px_rgba(45,212,191,0.35)]"
                             aria-label={skill.title}
                              role="img"
                             title={skill.title} />
@@ -79,9 +75,6 @@ const Skillset = () => {
                     <h3 className="text-xl font-semibold mb-3">
                       {skill.title}
                     </h3>
-                    <p className="text-base text-gray-300 leading-relaxed text-left">
-                      {skill.text}
-                    </p>
                   </div>
 
                 </motion.div>
