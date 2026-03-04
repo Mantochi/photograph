@@ -33,7 +33,7 @@ https://mantochi.github.io/photograph/
 
 ## 🛠 Built With
 
-- React.js
+- React (CRA)
 - Tailwind CSS
 - Framer Motion
 - JavaScript (ES6+)
@@ -43,15 +43,25 @@ https://mantochi.github.io/photograph/
 ## 📂 Project Structure
 
 photography-app/
+
 │
+
 ├── public/
+
 ├── src/
+
 │ ├── components/layouts
+
 │ ├── pages/
+
 │ ├── assets/
+
 │ └── App.jsx
+
 │
+
 ├── index.html
+
 └── package.json
 
 ---
