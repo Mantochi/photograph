@@ -51,11 +51,17 @@ photography-app/
 ├── src/
 
 │ ├── components/layouts
+
 │ ├── pages/
+
 │ ├── assets/
+
 │ └── App.jsx
+
 │
+
 ├── index.html
+
 └── package.json
 
 ---
