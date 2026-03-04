@@ -43,25 +43,15 @@ https://mantochi.github.io/photograph/
 ## 📂 Project Structure
 
 photography-app/
-
 │
-
 ├── public/
-
 ├── src/
-
 │ ├── components/layouts
-
 │ ├── pages/
-
 │ ├── assets/
-
 │ └── App.jsx
-
 │
-
 ├── index.html
-
 └── package.json
 
 ---
