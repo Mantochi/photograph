@@ -133,13 +133,20 @@ useEffect(() => {
                                exit={{ opacity: 0, y: -10 }}
                                transition={{ duration: 0.15 }}
                                className="absolute right-0 top-full mt-3 w-64 rounded-xl bg-white shadow-xl py-3 text-base border border-gray-400 font-medium">
-                                <Dropdown label="Home" />
+                                
+                                
+                                <Dropdown label="Home" to="#home" 
+                                onClick={() => setMenuOpen(false)} />
+                                   
+                                <Dropdown  label="About" to="#skillset" 
+                                onClick={() => setMenuOpen(false)} />
 
-                                <Dropdown  label="About" to="/skillset" />
-
-                                <Dropdown  label="Portfolio" to="/portfolio" />
-                                <Dropdown  label="Services" to="/services" />
-                                <Dropdown  label="Contact" to="/contact" />
+                                <Dropdown  label="Portfolio" to="#gallery" 
+                                onClick={() => setMenuOpen(false)} />
+                                <Dropdown  label="Services" to="#services" 
+                                onClick={() => setMenuOpen(false)} />
+                                <Dropdown  label="Contact" to="#contact" 
+                                onClick={() => setMenuOpen(false)} />
                                 
                               </motion.ul>
                               )}

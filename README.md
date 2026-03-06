@@ -13,14 +13,6 @@ https://mantochi.github.io/photograph/
 
 ## ✨ Features
 
-- Clean dark UI
-- Smooth transitions
-- Interactive image showcase
-
----
-
-## ✨ Features
-
 - Responsive design (Desktop, Tablet, Mobile)
 - Auto-hide navbar on scroll
 - Animated image showcase with scrollbar
@@ -72,7 +64,7 @@ Clone the repository:
 
 ```bash
 git clone https://github.com/Mantochi/photograph.git
-cd photograph
+cd photography-app
 npm install
 npm start
 ```
@@ -123,7 +115,9 @@ This template can be reused and customized for :
 ## 👤 Author
 
 Gabriel M
+
 Frontend Developer
+
 Passionate about building modern, animated web experiences.
 
 ---

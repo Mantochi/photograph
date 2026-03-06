@@ -105,7 +105,7 @@ export default function Contact() {
                 className="peer w-full bg-transparent border-b border-gray-700 py-3 focus:outline-none focus:border-white transition-all"
                 placeholder=" "
               />
-              <label className="absolute left-0 top-3 text-gray-500 transition-all 
+              <label className="absolute left-0 top-3 text-gray-300 transition-all 
                 peer-placeholder-shown:top-3 
                 peer-placeholder-shown:text-gray-500 
                 peer-focus:-top-3 
