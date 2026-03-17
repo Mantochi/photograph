@@ -1,4 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
+
 import {
   UserCircle,
   Image,
@@ -11,18 +14,22 @@ const skills = [
   {
     title: "Portraits",
     icon: UserCircle,
+    path: "/portfolio/portraits",
   },
   {
     title: "Landscapes",
     icon: Image,
+    path: "/portfolio/landscapes",
   },
   {
     title: "Commercial / Corporate",
     icon: Briefcase,
+    path: "/portfolio/commercial",
   },
   {
     title: "Weddings",
     icon: Heartbeat,
+    path: "/portfolio/weddings",
   },
 ];
 
@@ -53,14 +60,15 @@ const Skillset = () => {
           <div className="md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-12">
             {skills.map((skill, index) => {
               const Icon = skill.icon;
+
               return (
-                <motion.div
-                                key={index}
-                                className="flex flex-col items-center text-center
-                                        gap-6 cursor-pointer"
+                <Link to={skill.path} key={index}>
+                  <motion.div
+                    className="group flex flex-col items-center text-center
+                            gap-6 cursor-pointer"
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                whileHover={{ scale: 1.05 }}
+                                whileHover={{ scale: 1.05, y: -5 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.6, delay: index * 0.2 }}
                               >
@@ -68,19 +76,21 @@ const Skillset = () => {
                   
                     <Icon
                     size={160}
-                     className="text-teal-400 drop-shadow-[0_0_15px_rgba(45,212,191,0.35)]"
+                     className="text-teal-400 transition duration-500 drop-shadow-[0_0_15px_rgba(45,212,191,0.35)]
+                                group-hover:drop-shadow-[0_0_30px_rgba(45,212,191,1,0.7)] group-hover:-translate-y-2"
                             aria-label={skill.title}
                              role="img"
                             title={skill.title} />
                   
 
                   <div>
-                    <h3 className="text-xl font-semibold mb-3">
+                    <h3 className="text-xl font-semibold mb-3 transition group-hover:text-teal-400">
                       {skill.title}
                     </h3>
                   </div>
 
                 </motion.div>
+                </Link>
               );
             })}
           </div>

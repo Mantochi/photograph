@@ -135,7 +135,7 @@ useEffect(() => {
                                className="absolute right-0 top-full mt-3 w-64 rounded-xl bg-white shadow-xl py-3 text-base border border-gray-400 font-medium">
                                 
                                 
-                                <Dropdown label="Home" to="#home" 
+                                <Dropdown label="Home" to="/" 
                                 onClick={() => setMenuOpen(false)} />
                                    
                                 <Dropdown  label="About" to="#skillset" 
