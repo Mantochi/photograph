@@ -1,4 +1,5 @@
 import Header from '../components/Layouts/Header';
+import HeroSection from '../components/Layouts/HeroSection';
 import Gallery from "../components/Layouts/Gallery";
 import Skillset from "../components/Layouts/Skillset";
 import Services from "../components/Layouts/Services";
@@ -44,6 +45,7 @@ function Home() {
        className="App">
       <header className="bg-gray-600 overflow-x-hidden">
         <Header />
+        <HeroSection />
         <Gallery images={images} />
         <Skillset />
         <Services />

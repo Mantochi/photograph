@@ -1,7 +1,10 @@
-import { useState, useEffect, useRef } from "react"
-import heroImage from "../../assets/montainhill.jpeg"
-import Dropdown from "./Dropdown"
-import { AnimatePresence, motion } from "framer-motion"
+import { useState, useEffect, useRef } from "react";
+import Dropdown from "./Dropdown";
+import { AnimatePresence, motion } from "framer-motion";
+import { Link } from "react-router-dom";
+
+
+
 const Header = () => {
 
   const [menuOpen, setMenuOpen] = useState(false);
@@ -87,16 +90,21 @@ useEffect(() => {
 
         {/* Desktop Links */}
         <ul className="hidden md:flex space-x-8 text-base tracking-wide">
-          <a href="#home" 
-                 className={`hover:text-teal-400 cursor-pointer ${activeSection === "home" ? "text-teal-400" : ""}`}>Home</a>
-          <a href="#skillset" 
-             className={`hover:text-teal-400 cursor-pointer ${activeSection === "skillset" ? "text-teal-400" : ""}`}>About</a>
-          <a href="#gallery" 
-             className={`hover:text-teal-400 cursor-pointer ${activeSection === "gallery" ? "text-teal-400" : ""}`}>Portfolio</a>
-          <a href="#services" 
-             className={`hover:text-teal-400 cursor-pointer ${activeSection === "services" ? "text-teal-400" : ""}`}>Services</a>
-          <a href="#contact" 
-             className={`hover:text-teal-400 cursor-pointer ${activeSection === "contact" ? "text-teal-400" : ""}`}>Contact</a>
+          <Link to="/" 
+                 className={`hover:text-teal-400 cursor-pointer ${activeSection === "home" ? "text-teal-400" : ""}`}>
+                  Home</Link>
+          <Link to="#skillset" 
+                 className={`hover:text-teal-400 cursor-pointer ${activeSection === "skillset" ? "text-teal-400" : ""}`}>
+                  About</Link>
+          <Link to="/portfolio" 
+                 className={`hover:text-teal-400 cursor-pointer ${activeSection === "gallery" ? "text-teal-400" : ""}`}>
+                  Portfolio</Link>
+          <Link to="#services" 
+             className={`hover:text-teal-400 cursor-pointer ${activeSection === "services" ? "text-teal-400" : ""}`}>
+              Services</Link>
+          <Link to="#contact" 
+             className={`hover:text-teal-400 cursor-pointer ${activeSection === "contact" ? "text-teal-400" : ""}`}>
+              Contact</Link>
         </ul>
 
         {/* CTA + Mobile Menu Button */}
@@ -141,7 +149,7 @@ useEffect(() => {
                                 <Dropdown  label="About" to="#skillset" 
                                 onClick={() => setMenuOpen(false)} />
 
-                                <Dropdown  label="Portfolio" to="#gallery" 
+                                <Dropdown  label="Portfolio" to="/portfolio" 
                                 onClick={() => setMenuOpen(false)} />
                                 <Dropdown  label="Services" to="#services" 
                                 onClick={() => setMenuOpen(false)} />
@@ -155,37 +163,6 @@ useEffect(() => {
                     </div>
                     </nav>
         
-
-      {/* ================= HERO ================= */}
-      <section className="flex flex-col md:flex-row items-center min-h-[85vh] px-6 md:px-16 pt-28">
-
-        {/* Text */}
-        <div className="flex-1 space-y-6 py-10 md:py-0">
-          <h2 className="text-3xl sm:text-4xl md:text-6xl font-light leading-tight max-w-xl">
-            We Capture Stories That Outlive Moments.
-          </h2>
-
-          <p className="text-gray-400 max-w-md text-sm md:text-base">
-            Modern photography that elevates your brand, preserves your moments, and inspires your audience.
-          </p>
-
-          <button className="border border-white px-6 py-2 hover:bg-white hover:text-black transition duration-300">
-            View Our Work
-          </button>
-        </div>
-
-        {/* Image */}
-        <div className="flex-1 flex justify-center md:justify-end">
-          <div className="w-[280px] h-[280px] md:w-[420px] md:h-[420px] overflow-hidden rounded-full shadow-2xl ring-2 ring-teal-500/30">
-          <img
-            src={heroImage}
-            alt="Photography portrait"
-            className="w-full h-full object-cover"
-          />
-          </div>
-        </div>
-
-      </section>
 
     </header>
   )

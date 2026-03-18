@@ -1,6 +1,7 @@
 import Header from '../components/Layouts/Header';
 import PortfolioDesk from '../components/Layouts/PortfolioDesk';
 import Footer from "../components/Layouts/Footer";
+import { useEffect } from "react";
 
 
 import banner from "../assets/banner.png";
@@ -24,8 +25,14 @@ const images = {
 
 export default function Portfolio() {
 
+
+  useEffect(() => {
+     window.scrollTo(0, 0);
+  }, []);
+
   return (
-    <section id='portfolio' className="bg-gray-600 overflow-x-hidden">
+    <section id='portfolio' 
+    className="bg-gray-600 overflow-x-hidden">
       <Header />
       <PortfolioDesk images={images} />
       <Footer />

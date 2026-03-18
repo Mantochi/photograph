@@ -14,12 +14,12 @@ const skills = [
   {
     title: "Portraits",
     icon: UserCircle,
-    path: "/portfolio/portraits",
+    path: "/portfolio/portrait",
   },
   {
     title: "Landscapes",
     icon: Image,
-    path: "/portfolio/landscapes",
+    path: "/portfolio/landscape",
   },
   {
     title: "Commercial / Corporate",
@@ -29,7 +29,7 @@ const skills = [
   {
     title: "Weddings",
     icon: Heartbeat,
-    path: "/portfolio/weddings",
+    path: "/portfolio/wedding",
   },
 ];
 
