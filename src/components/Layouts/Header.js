@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import Dropdown from "./Dropdown";
 import { AnimatePresence, motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 
 
@@ -16,21 +16,32 @@ const Header = () => {
       
   const [activeSection, setActiveSection] = useState("home");
 
+  const scrollSec = (id) => {
+    document.getElementById(id)?.scrollIntoView({
+      behavior: "smooth"
+    });
+  };
+
+
   useEffect(() => {
+    const sections =
+     document.querySelectorAll("section");
+
+
     const handleScroll = () => {
-      const sections = ["home", "services", "gallery", "contact"];
+      let current = ["home"];
+
 
       sections.forEach((section) => {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-
-          if (rect.top <= 150 && rect.bottom >= 150) {
-            setActiveSection(section);
-          }
+        const top = section.offsetTop - 100;
+        if (window.scrollY >= top) {
+          current = section.getAttribute("id");
         }
       });
-    };
+
+            setActiveSection(current);
+        };
+  
 
     window.addEventListener("scroll", handleScroll);
 
@@ -90,21 +101,22 @@ useEffect(() => {
 
         {/* Desktop Links */}
         <ul className="hidden md:flex space-x-8 text-base tracking-wide">
-          <Link to="/" 
-                 className={`hover:text-teal-400 cursor-pointer ${activeSection === "home" ? "text-teal-400" : ""}`}>
-                  Home</Link>
-          <Link to="#skillset" 
-                 className={`hover:text-teal-400 cursor-pointer ${activeSection === "skillset" ? "text-teal-400" : ""}`}>
-                  About</Link>
-          <Link to="/portfolio" 
-                 className={`hover:text-teal-400 cursor-pointer ${activeSection === "gallery" ? "text-teal-400" : ""}`}>
-                  Portfolio</Link>
-          <Link to="#services" 
-             className={`hover:text-teal-400 cursor-pointer ${activeSection === "services" ? "text-teal-400" : ""}`}>
-              Services</Link>
-          <Link to="#contact" 
-             className={`hover:text-teal-400 cursor-pointer ${activeSection === "contact" ? "text-teal-400" : ""}`}>
-              Contact</Link>
+          <NavLink to="/" 
+                 className={`hover:text-teal-400 cursor-pointer ${activeSection === "home" ? "after:absolute after:left-0 after:-bottom-1 after:w-full after:h-[2px] after:text-teal-500" : ""}`}>
+                  Home</NavLink>
+          <NavLink to="#skillset" 
+                 className={`hover:text-teal-400 cursor-pointer ${activeSection === "skillset" ? "after:absolute after:left-0 after:-bottom-1 after:w-full after:h-[2px] after:text-teal-500" : ""}`}>
+                  About Me</NavLink>
+          <NavLink to="/portfolio/portrait" 
+                 className={`hover:text-teal-400 cursor-pointer ${activeSection === "gallery" ? "after:absolute after:left-0 after:-bottom-1 after:w-full after:h-[2px] after:text-teal-500" : ""}`}>
+                  Gallery</NavLink>
+          <a href="#contact"
+             onClick={(e) => {
+              e.preventDefault()
+              scrollSec("contact");
+             }}
+             className={`hover:text-teal-400 cursor-pointer ${activeSection === "contact" ? "after:absolute after:left-0 after:-bottom-1 after:w-full after:h-[2px] after:text-teal-500" : ""}`}>
+              Contact</a>
         </ul>
 
         {/* CTA + Mobile Menu Button */}
@@ -146,13 +158,12 @@ useEffect(() => {
                                 <Dropdown label="Home" to="/" 
                                 onClick={() => setMenuOpen(false)} />
                                    
-                                <Dropdown  label="About" to="#skillset" 
+                                <Dropdown  label="About Me" to="#skillset" 
                                 onClick={() => setMenuOpen(false)} />
 
-                                <Dropdown  label="Portfolio" to="/portfolio" 
+                                <Dropdown  label="Gallery" to="/portfolio/portrait" 
                                 onClick={() => setMenuOpen(false)} />
-                                <Dropdown  label="Services" to="#services" 
-                                onClick={() => setMenuOpen(false)} />
+            
                                 <Dropdown  label="Contact" to="#contact" 
                                 onClick={() => setMenuOpen(false)} />
                                 

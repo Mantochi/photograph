@@ -5,8 +5,11 @@ import { motion } from "framer-motion";
 
 
 export default function PortfolioDesk({ images }) {
+  
   const { category } = useParams();
+
   console.log(category);
+  
   const [selectedImage, setSelectedImage] = useState(null);
 
   const gallery = images[category?.toLowerCase()] || [];
@@ -91,6 +94,8 @@ export default function PortfolioDesk({ images }) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}>
+
+
         {/* close button */}
           <button
             className="absolute top-4 right-4 text-white hover:text-teal-300"
