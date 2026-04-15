@@ -1,17 +1,21 @@
 import { useState, useEffect, useRef } from "react";
-import Dropdown from "./Dropdown";
-import { AnimatePresence, motion } from "framer-motion";
+import { useLocation } from "react-router-dom";
 import { NavLink } from "react-router-dom";
+import { House, UserCircle, Image } from "phosphor-react";
 
 
 
 const Header = () => {
 
-  const [menuOpen, setMenuOpen] = useState(false);
-    const dropdownRef = useRef(null);
 
-    const [showNav, setShowNav] = useState(true);
-      const lastScrollY = useRef(0);
+  const location = useLocation();
+
+    const isHome = location.pathname === "/";
+      const isPortfolio = location.pathname.includes("/portfolio");
+    
+
+      const [showNav, setShowNav] = useState(true);
+        const lastScrollY = useRef(0);
 
       
   const [activeSection, setActiveSection] = useState("home");
@@ -50,22 +54,6 @@ const Header = () => {
 
 
 
-// Close dropdown on outside click
-useEffect(() => {
-    function handleClickOutside(event) {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target)
-      ) {
-        setMenuOpen(false);
-      }
-    }
-
-    document.addEventListener("click", handleClickOutside);
-    return () => document.removeEventListener("click", handleClickOutside);
-  }, []);
-
-
   useEffect(() => {
   const handleScroll = () => {
     const currentScrollY = window.scrollY;
@@ -87,10 +75,13 @@ useEffect(() => {
 
 
   return (
-    <header className="w-full bg-black text-white">
+    <header className=" text-white p-3">
 
       {/* ================= NAVBAR ================= */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 px-4 bg-black flex items-center justify-between
+      <nav className={`fixed top-0 left-0 right-0 z-50 px-4 flex items-center justify-between
+                     bg-gradient-to-r from-teal-500/20 via-white/10 to-teal-500/20
+                     backdrop-blur-xl border-b border-white/20 rounded-xl
+                      shadow-[0_8px_32px_rgba(0,0,0,0.3),0_0_30px_rgba(20,184,166,0.25)]
                      py-4 md:px-16 transition-transform duration-300
                     ${showNav ? "translate-y-0" : "-translate-y-full"}`}>
 
@@ -121,57 +112,48 @@ useEffect(() => {
 
         {/* CTA + Mobile Menu Button */}
 
-          {/* Hamburger */}
-          <div
-             ref={dropdownRef}
-  
-             className="flex items-center space-x-4 relative pl-4">
+    <div className="flex items-center gap-4">
+
+          {/* ICONS */}
+    <div className="flex md:hidden items-center gap-4 text-xl 
+                    ">
+
+    {!isHome && (
+      <NavLink to="/"> 
+        <House size={40} className="hover:text-teal-400 transition transform hover:scale-110 active:scale-95" />
+        
+      </NavLink>
+    )}
+
+    {isHome && (
+      <a href="#skillset">
+        <UserCircle size={40} className="hover:text-teal-400" />
+        
+      </a>
+    )}
+
+    {!isPortfolio && (
+      <NavLink to="/portfolio/portrait">
+        <Image size={40} className="hover:text-teal-400" />
+
+      </NavLink>
+    )}
+
+
+  </div>
+
+  {/* CTA LAST */}
+  <a
+    href="#contact"
+    className="bg-teal-700 hover:bg-teal-500 px-4 py-2 text-base rounded transition duration-300"
+  >
+    Book Me
+  </a>
+
+</div>
           
-          
-          <a 
-          href="#contact"
-          className="bg-teal-700 hover:bg-teal-500 px-4 py-2 text-base rounded transition duration-300">
-            Book Now
-          </a>
-          <button
-          type="button"
-             aria-haspopup="menu"
-             aria-expanded={menuOpen}
-             onClick={() => setMenuOpen(prev => !prev)}
-            className="md:hidden text-2xl"
-          >
-            ☰
-          </button>
-
-      {/* Mobile Menu */}
-      <AnimatePresence>
-                             {menuOpen && (
-                             <motion.ul
-                               key="mobile-menu"
-                               initial={{ opacity: 0, y: -10 }}
-                               animate={{ opacity: 1, y: 0 }}
-                               exit={{ opacity: 0, y: -10 }}
-                               transition={{ duration: 0.15 }}
-                               className="absolute right-0 top-full mt-3 w-64 rounded-xl bg-white shadow-xl py-3 text-base border border-gray-400 font-medium">
-                                
-                                
-                                <Dropdown label="Home" to="/" 
-                                onClick={() => setMenuOpen(false)} />
-                                   
-                                <Dropdown  label="About Me" to="#skillset" 
-                                onClick={() => setMenuOpen(false)} />
-
-                                <Dropdown  label="Gallery" to="/portfolio/portrait" 
-                                onClick={() => setMenuOpen(false)} />
-            
-                                <Dropdown  label="Contact" to="#contact" 
-                                onClick={() => setMenuOpen(false)} />
-                                
-                              </motion.ul>
-                              )}
-                             </AnimatePresence>
-
-                    </div>
+    
+      
                     </nav>
         
 
