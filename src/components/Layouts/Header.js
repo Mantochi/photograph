@@ -11,6 +11,7 @@ const Header = () => {
   const location = useLocation();
 
     const isHome = location.pathname === "/";
+     const isAbout = location.pathname.includes("/about");
       const isPortfolio = location.pathname.includes("/portfolio");
     
 
@@ -75,14 +76,14 @@ const Header = () => {
 
 
   return (
-    <header className=" text-white p-3">
+    <header className="text-white fixed top-0 left-0 right-0 z-50 p-3">
 
       {/* ================= NAVBAR ================= */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 px-4 flex items-center justify-between
+      <nav className={`w-full flex items-center justify-between
                      bg-gradient-to-r from-teal-500/20 via-white/10 to-teal-500/20
-                     backdrop-blur-xl border-b border-white/20 rounded-xl
+                     backdrop-blur-xl border-b border-white/20 rounded-2xl
                       shadow-[0_8px_32px_rgba(0,0,0,0.3),0_0_30px_rgba(20,184,166,0.25)]
-                     py-4 md:px-16 transition-transform duration-300
+                     py-4 px-4 md:px-16 transition-transform duration-300
                     ${showNav ? "translate-y-0" : "-translate-y-full"}`}>
 
         {/* Logo */}
@@ -98,16 +99,10 @@ const Header = () => {
           <NavLink to="#skillset" 
                  className={`hover:text-teal-400 cursor-pointer ${activeSection === "skillset" ? "after:absolute after:left-0 after:-bottom-1 after:w-full after:h-[2px] after:text-teal-500" : ""}`}>
                   About Me</NavLink>
-          <NavLink to="/portfolio/portrait" 
+          <NavLink to="/portfolio/all" 
                  className={`hover:text-teal-400 cursor-pointer ${activeSection === "gallery" ? "after:absolute after:left-0 after:-bottom-1 after:w-full after:h-[2px] after:text-teal-500" : ""}`}>
                   Gallery</NavLink>
-          <a href="#contact"
-             onClick={(e) => {
-              e.preventDefault()
-              scrollSec("contact");
-             }}
-             className={`hover:text-teal-400 cursor-pointer ${activeSection === "contact" ? "after:absolute after:left-0 after:-bottom-1 after:w-full after:h-[2px] after:text-teal-500" : ""}`}>
-              Contact</a>
+  
         </ul>
 
         {/* CTA + Mobile Menu Button */}
@@ -120,21 +115,21 @@ const Header = () => {
 
     {!isHome && (
       <NavLink to="/"> 
-        <House size={40} className="hover:text-teal-400 transition transform hover:scale-110 active:scale-95" />
+        <House size={35} className="hover:text-teal-400 transition transform hover:scale-110 active:scale-95" />
         
       </NavLink>
     )}
 
-    {isHome && (
+    {!isAbout && (
       <a href="#skillset">
-        <UserCircle size={40} className="hover:text-teal-400" />
+        <UserCircle size={35} className="hover:text-teal-400" />
         
       </a>
     )}
 
     {!isPortfolio && (
-      <NavLink to="/portfolio/portrait">
-        <Image size={40} className="hover:text-teal-400" />
+      <NavLink to="/portfolio/all">
+        <Image size={35} className="hover:text-teal-400" />
 
       </NavLink>
     )}
@@ -145,6 +140,10 @@ const Header = () => {
   {/* CTA LAST */}
   <a
     href="#contact"
+    onClick={(e) => {
+      e.preventDefault()
+      scrollSec("contact");
+    }}
     className="bg-teal-700 hover:bg-teal-500 px-4 py-2 text-base rounded transition duration-300"
   >
     Book Me

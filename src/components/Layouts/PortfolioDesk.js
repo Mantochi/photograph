@@ -12,7 +12,10 @@ export default function PortfolioDesk({ images }) {
   
   const [selectedImage, setSelectedImage] = useState(null);
 
-  const gallery = images[category?.toLowerCase()] || [];
+  const gallery = category === "all"
+  ? Object.values(images).flat()
+  : images[category] || [];
+
   console.log(gallery);
 
   const nextImage = () => {
@@ -25,14 +28,17 @@ export default function PortfolioDesk({ images }) {
   };
 
   return (
-    <section className="bg-[#0f172a] min-h-screen py-20 px-6 text-white">
+    <section className="bg-[#0f172a] min-h-screen py-20 px-6 text-white pt-28">
 
+     
       <h1 className="text-4xl md:text-5xl font-semibold capitalize mb-10">
-        {category} Photography
+        {category === "all"
+        ? "Gallery"
+         : `${category.charAt(0).toUpperCase() + category.slice(1)} Photography`}
       </h1>
 
-    <div className="flex gap-4 mb-10 backdrop-blur-md bg-white/5 p-2 rounded-xl w-fit border border-white/10">
-          {["portrait", "landscape"].map((cat) => (
+    <div className="flex gap-4 mb-10 backdrop-blur-md bg-white/5 p-2 rounded-xl w-fit overflow-x-auto md:overflow-x-visible border border-white/10 no-scrollbar">
+          {["all", "portrait", "landscape", "wedding", "commercial"].map((cat) => (
        <Link
         key={cat}
         to={`/portfolio/${cat}`}
