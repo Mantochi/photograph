@@ -76,17 +76,17 @@ export default function TestimonialsSection() {
         </div>
 
         {/* Mobile Layout */}
-        <div className="lg:hidden flex gap-3 overflow-x-auto pb-4 mx-auto">
+        <div className="lg:hidden flex gap-3 overflow-x-auto pb-4">
           {testimonials.map((item) => (
             <div
               key={item.id}
               className="
-                min-w-[55%]
+                min-w-[65%]
                 bg-white/5
                 backdrop-blur-lg
                 border border-black/30
                 rounded-2xl
-                p-6
+                p-4
               "
             >
               {/* Quote */}
