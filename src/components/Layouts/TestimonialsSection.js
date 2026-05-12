@@ -86,7 +86,7 @@ export default function TestimonialsSection() {
                 backdrop-blur-lg
                 border border-black/30
                 rounded-2xl
-                p-10
+                p-6
               "
             >
               {/* Quote */}
