@@ -1,6 +1,26 @@
 import React, { useState, useEffect } from "react";
 
+const categories = [
+  "All",
+  "Landscapes",
+  "Portraits",
+  "Weddings",
+  "Lifestyle",
+  "Commercial",
+];
+
 const Mobileview = ({ images }) => {
+
+const [activeTab, setActiveTab] = useState("All");
+
+  const filteredItems =
+    activeTab === "All"
+      ? images
+      : images.filter(
+          (item) => item.category === activeTab
+        );
+
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [touchStartX, setTouchStartX] = useState(null);
   const [peek, setPeek] = useState(100);
@@ -61,6 +81,27 @@ const Mobileview = ({ images }) => {
             </h2>
 
             <div className="w-32 h-[1px] bg-gray-600 ml-5 mt-8" />
+
+             {/* Tabs */}
+          <div className="flex gap-4 justify-center flex-wrap mt-8">
+            
+            {categories.map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`px-5 py-2 rounded-full text-sm uppercase tracking-[0.2em] transition-all duration-300
+                  
+                  ${
+                    activeTab === tab
+                      ? "bg-black text-white"
+                      : "bg-white/40 backdrop-blur-md border border-white/30 text-gray-900 hover:bg-black hover:text-white"
+                  }
+                `}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
           </div>
 
       <div
@@ -69,6 +110,10 @@ const Mobileview = ({ images }) => {
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
       >
+
+        {filteredItems.map((item) => (
+          <div>
+
         {images.map((img, index) => {
           const isActive = index === currentIndex;
           const isPrev = index === (currentIndex - 1 + images.length) % images.length;
@@ -103,6 +148,7 @@ const Mobileview = ({ images }) => {
           }
 
           return (
+
             <img
               key={index}
               src={img.src}
@@ -136,7 +182,11 @@ const Mobileview = ({ images }) => {
               }}
             />
           );
+
         })}
+
+    
+      
 
         {/* Left Arrow */}
         <button
@@ -155,7 +205,11 @@ const Mobileview = ({ images }) => {
         >
           ▶
         </button>
+      
       </div>
+       
+        ))}
+        </div>
 
       {/* SEE MORE Button */}
       <div className="text-center mt-6">

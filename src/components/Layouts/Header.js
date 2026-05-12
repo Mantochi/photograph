@@ -96,7 +96,7 @@ const Header = () => {
           <NavLink to="/" 
                  className={`hover:text-teal-400 cursor-pointer ${activeSection === "home" ? "after:absolute after:left-0 after:-bottom-1 after:w-full after:h-[2px] after:text-teal-500" : ""}`}>
                   Home</NavLink>
-          <NavLink to="#skillset" 
+          <NavLink to="/about" 
                  className={`hover:text-teal-400 cursor-pointer ${activeSection === "skillset" ? "after:absolute after:left-0 after:-bottom-1 after:w-full after:h-[2px] after:text-teal-500" : ""}`}>
                   About Me</NavLink>
           <NavLink to="/portfolio/all" 
@@ -115,21 +115,21 @@ const Header = () => {
 
     {!isHome && (
       <NavLink to="/"> 
-        <House size={35} className="hover:text-teal-400 transition transform hover:scale-110 active:scale-95" />
+        <House size={32} className="hover:text-teal-400 transition transform hover:scale-110 active:scale-95" />
         
       </NavLink>
     )}
 
     {!isAbout && (
-      <a href="#skillset">
-        <UserCircle size={35} className="hover:text-teal-400" />
+      <NavLink to="/about">
+        <UserCircle size={32} className="hover:text-teal-400" />
         
-      </a>
+      </NavLink>
     )}
 
     {!isPortfolio && (
       <NavLink to="/portfolio/all">
-        <Image size={35} className="hover:text-teal-400" />
+        <Image size={32} className="hover:text-teal-400" />
 
       </NavLink>
     )}

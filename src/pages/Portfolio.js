@@ -9,6 +9,7 @@ import london from "../assets/london.png";
 import newyork from "../assets/newyork.png";
 import user2 from "../assets/user2.jpg";
 import washington from "../assets/washington.png";
+import GalleryHero from '../components/Layouts/hero/GalleryHero';
 
 
 const images = {
@@ -34,6 +35,7 @@ export default function Portfolio() {
     <section id='portfolio' 
     className="bg-gray-600 overflow-x-hidden">
       <Header />
+      <GalleryHero />
       <PortfolioDesk images={images} />
       <Footer />
 

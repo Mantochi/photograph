@@ -1,8 +1,8 @@
 import Header from '../components/Layouts/Header';
-import HeroSection from '../components/Layouts/HeroSection';
-import Gallery from "../components/Layouts/Gallery";
-import Skillset from "../components/Layouts/Skillset";
-import Services from "../components/Layouts/Services";
+import HomeHero from '../components/Layouts/hero/HomeHero';
+import Gallery from "../components/hero/Gallery";
+import ServicesBentoGrid from "../components/Layouts/ServicesBentoGrid";
+import TestimonialsSection from "../components/Layouts/TestimonialsSection";
 import Footer from "../components/Layouts/Footer";
 
 import banner from "../assets/banner.png";
@@ -42,15 +42,14 @@ function Home() {
   ];
   return (
     <section id='home'
-       className="App">
-      <header className="bg-gray-600 overflow-x-hidden">
+       className="App overflow-x-hidden">
+
         <Header />
-        <HeroSection />
+        <HomeHero />
         <Gallery images={images} />
-        <Skillset />
-        <Services />
+        <ServicesBentoGrid />
+        <TestimonialsSection />
         <Footer />
-      </header>
     </section>
   );
 }
