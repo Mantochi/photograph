@@ -8,7 +8,7 @@ const AboutHero = () => {
     return (
         <HeroWrapper bgImage={heroImg}>
 
-            <div className="max-w-5xl pt-40 md:pt-40">
+            <div className="max-w-5xl pt-40 ">
                  {/*Left glass card*/}
 
        <div className="relative backdrop-blur-xl bg-white/10 border border-white/20

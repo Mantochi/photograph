@@ -10,7 +10,7 @@ const HeroWrapper = ({ bgImage, children }) => {
             <img
               src={bgImage}
                alt=""
-                className="absolute inset-0 w-full h-full object-cover object-[center_10%]" />
+                className="absolute inset-0 w-full h-full object-cover object-[60%_10%] md:object-[center_10%]" />
 
                 {/* Overlay */}
 

@@ -4,7 +4,7 @@ import {
   VideoCamera,
   Printer,
   Palette,
-  MagicWand,
+  Microphone,
   Image,
   ArrowUpRight,
 } from "phosphor-react";
@@ -14,40 +14,52 @@ export default function ServicesBentoGrid() {
 
   const services = [
 {
-title: "Photography",
+title: "PHOTOGRAPHY",
 desc: "Studio, outdoor and event photography with cinematic quality.",
 icon: Camera,
 className: "col-span-2 md:col-span-2 md:row-span-2",
+iconSize: 150,
+iconColor: "text-amber-600"
 },
 {
-title: "Videography",
+title: "VIDEOGRAPHY",
 desc: "Professional video production for brands and events.",
 icon: VideoCamera,
 className:"md:col-span-1 md:row-span-2",
+iconSize: 120,
+iconColor: "text-green-600"
 },
 {
-title: "Editing",
+title: "EDITING",
 desc: "High-end retouching, color grading and enhancement.",
 icon: Image,
 className: "md:col-span-1 md:row-span-2",
+iconSize: 120,
+iconColor: "text-green-400"
 },
 {
-title: "Styling",
+title: "STYLING",
 desc: "Creative direction, wardrobe styling and set preparation.",
 icon: Palette,
 className: "md:col-span-2",
+iconSize: 80,
+iconColor: "text-purple-600"
 },
 {
-title: "Printing",
-desc: "Creative direction, wardrobe styling and set preparation.Premium prints, frames and album production.",
+title: "PRINTING",
+desc: "Premium prints, frames and album production.",
 icon: Printer,
 className: "col-span-2 md:col-span-2",
+iconSize: 80,
+iconColor: "text-purple-400"
 },
 {
-title: "Recording",
+title: "RECORDING",
 desc: "Audio recording, podcast sessions and live production.",
-icon: MagicWand,
+icon: Microphone,
 className: "md:col-span-4",
+iconSize: 90,
+iconColor: "text-yellow-500"
 },
 ];
 
@@ -82,7 +94,7 @@ return (
               relative  
               overflow-hidden  
               rounded-2xl 
-              border border-white/10  
+              border border-white/40 
               bg-white/5  
               backdrop-blur-xl  
               p-4
@@ -100,18 +112,22 @@ return (
             </div>  
 
             {/* Content */}  
-            <div className="relative z-10 flex flex-col justify-between">  
+            <div className="relative z-10 flex justify-between h-full">  
               
 
-                <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center mb-6 border border-white/10">  
-                  <Icon className="w-6 h-6" />  
+                <div className=" absolute top-0 right-0 opacity-50 rounded-2xl bg-white/10 border border-white/10">  
+                  <Icon size={service.iconSize} 
+                    className={service.iconColor} />  
                   </div>
 
                    {/* Arrow */}  
-            
+                <div className="w-11 h-11 absolute bottom-0 right-0 flex items-center justify-center rounded-full border border-white/15  transition duration-500 group-hover:rotate-45 group-hover:bg-white group-hover:text-black">  
+                   <ArrowUpRight className="w-5 h-5" />  
+                  
+                </div>   
                 
               
-
+                <div className="flex flex-col px-5 justify-center">
                 <h3 className="text-2xl font-semibold mb-3 text-left">  
                   {service.title}  
                 </h3>  
@@ -119,14 +135,11 @@ return (
                 <p className="text-white/60 leading-relaxed max-w-sm text-left">  
                   {service.desc}  
                 </p>  
+
+               </div>
               </div> 
 
-               {/* Arrow */}  
-                <div className="flex justify-end mt-10">  
-                <div className="w-11 h-11 rounded-full border border-white/15 flex items-center justify-center transition duration-500 group-hover:rotate-45 group-hover:bg-white group-hover:text-black">  
-                   <ArrowUpRight className="w-5 h-5" />  
-                 </div>  
-                </div>   
+        
 
               
             {/* Noise Overlay */}  

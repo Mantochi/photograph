@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 const categories = [
   "All",
@@ -35,6 +36,12 @@ const [activeTab, setActiveTab] = useState("All");
   
 
   useEffect(() => {
+    
+    setCurrentIndex(0);
+  }, [activeTab]);
+
+  useEffect(() => {
+    
     updatePeek();
     window.addEventListener("resize", updatePeek);
     return () => window.removeEventListener("resize", updatePeek);
@@ -42,13 +49,13 @@ const [activeTab, setActiveTab] = useState("All");
 
   const prevSlide = () => {
     setCurrentIndex((prev) =>
-      prev === 0 ? images.length - 1 : prev - 1
+      prev === 0 ? filteredItems.length - 1 : prev - 1
     );
   };
 
   const nextSlide = () => {
     setCurrentIndex((prev) =>
-      prev === images.length - 1 ? 0 : prev + 1
+      prev === filteredItems.length - 1 ? 0 : prev + 1
     );
   };
 
@@ -111,13 +118,12 @@ const [activeTab, setActiveTab] = useState("All");
         onTouchEnd={handleTouchEnd}
       >
 
-        {filteredItems.map((item) => (
-          <div>
+        {filteredItems.map((img, index) => {
+          
 
-        {images.map((img, index) => {
           const isActive = index === currentIndex;
-          const isPrev = index === (currentIndex - 1 + images.length) % images.length;
-          const isNext = index === (currentIndex + 1) % images.length;
+          const isPrev = index === (currentIndex - 1 + filteredItems.length) % filteredItems.length;
+          const isNext = index === (currentIndex + 1) % filteredItems.length;
          
           // Hide everything else
           if (!isActive && !isPrev && !isNext) return null;
@@ -149,7 +155,7 @@ const [activeTab, setActiveTab] = useState("All");
 
           return (
 
-            <img
+            <motion.img
               key={index}
               src={img.src}
               alt={img.alt}
@@ -207,9 +213,7 @@ const [activeTab, setActiveTab] = useState("All");
         </button>
       
       </div>
-       
-        ))}
-        </div>
+
 
       {/* SEE MORE Button */}
       <div className="text-center mt-6">

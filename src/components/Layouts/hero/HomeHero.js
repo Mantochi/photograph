@@ -16,7 +16,7 @@ const HomeHero = () => {
                     Capturing <br /> Life Beautifully</h1>
 
                   <p className="text-xl font-bold md:text-2xl text-neutral-900 tracking-widest mt-10"> 
-                    Timeless photographs. Real moments. <br /> True emotions.
+                    Timeless photographs. <br  /> Real moments. <br /> True emotions.
                   </p>  
 
             <button className="px-6 py-3 border border-white/30 rounded-xl hover:bg-teal-400 transition mt-16">
