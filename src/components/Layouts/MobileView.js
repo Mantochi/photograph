@@ -37,8 +37,10 @@ const [activeTab, setActiveTab] = useState("All");
 
   useEffect(() => {
     
+    if (currentIndex >= filteredItems.length) {
     setCurrentIndex(0);
-  }, [activeTab]);
+  }
+}, [filteredItems, currentIndex]);
 
   useEffect(() => {
     
@@ -155,7 +157,7 @@ const [activeTab, setActiveTab] = useState("All");
 
           return (
 
-            <motion.img
+            <img
               key={index}
               src={img.src}
               alt={img.alt}
