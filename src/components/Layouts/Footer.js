@@ -34,7 +34,7 @@ export default function Contact() {
           viewport={{ once: true }}
           className="max-w-xl text-left md:text-left"
         >
-          <h2 className="text-4xl md:text-5xl font-semibold leading-none mb-8">
+          <h2 className="text-3xl md:text-5xl font-semibold leading-none mb-8">
             Let’s Create Something Amazingly Timeless.
           </h2>
 
@@ -44,11 +44,11 @@ export default function Contact() {
           </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-left flex-wrap">
-             <button className="px-6 py-3 bg-teal-600 text-black rounded-xl font-medium hover:bg-teal-400 transition">
+             <button className="px-6 py-3 bg-[#ce9340] text-black rounded-xl font-medium hover:bg-[#c89b5c] transition">
              Book a Session
             </button>
 
-           <button className="px-6 py-3 border border-white/30 rounded-xl hover:bg-white/10 transition">
+           <button className="px-6 py-3 border border-white/30 rounded-xl hover:bg-[#c89b5c] transition">
               Send a Message
             </button>
         </div>
@@ -72,8 +72,8 @@ export default function Contact() {
                 whileHover={{ y: -4 }}
                 transition={{ type: "spring", stiffness: 300 }}
                 className=" inline-flex items-center justify-center 
-                text-teal-400 drop-shadow-[0_0_14px_rgba(45,212,191,0.75)]
-                 md:text-gray-500 md:hover:text-teal-400 text-xl transition-all duration-300
+                text-[#c89b5c] drop-shadow-[0_0_14px_rgba(45,212,191,0.75)]
+                 md:text-gray-500 md:hover:text-[#c89b5c] text-xl transition-all duration-300
                  leading-none mt-7"
               >
                 <Icon size={40} weight="regular"

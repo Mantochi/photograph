@@ -43,11 +43,11 @@ export default function CreativeSection() {
 
         {/* LEFT CONTENT */}
         <div className="max-w-xl">
-          <p className="uppercase tracking-[0.2em] text-sm text-[#c89b5c] font-semibold mb-4">
+          <p className="uppercase tracking-[0.2em] text-lg text-[#c89b5c] font-semibold mb-4">
             Behind The Lens
           </p>
 
-          <h2 className="text-4xl md:text-5xl font-bold leading-tight text-black mb-6">
+          <h2 className="text-3xl md:text-5xl font-bold leading-tight text-black mb-6">
             When I’m not shooting,
             <br />
             I’m{" "}

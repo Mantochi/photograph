@@ -37,15 +37,18 @@ export default function PortfolioDesk() {
          : `${category.charAt(0).toUpperCase() + category.slice(1)} Photography`}
       </h1>
 
-    <div className="flex gap-4 mb-10 backdrop-blur-md bg-white/5 p-2 rounded-xl w-fit overflow-x-auto md:overflow-x-visible border border-white/10 no-scrollbar">
-          {["all", "portrait", "landscape", "wedding", "commercial"].map((cat) => (
+        <div className="flex gap-4 justify-center flex-wrap mt-8">
+        
+     {["all", "portrait", "landscape", "wedding", "commercial"].map((cat) => (
        <Link
         key={cat}
         to={`/portfolio/${cat}`}
-        className={`px-5 py-2 rounded-lg text-sm capitalize transition ${
-        category === cat
-          ? "bg-teal-500 text-white shadow-lg"
-          : "text-gray-400 hover:text-white"
+        className={`px-5 py-2 rounded-full text-lg uppercase tracking-[0.2em] transition-all duration-300
+          
+          ${
+             category === cat
+           ? "bg-[#c89b5c] text-white"
+            : "bg-white/40 backdrop-blur-md border border-black/20 text-neutral-700 hover:bg-[#c89b5c] hover:text-white"
              }`}>
       {cat}
       </Link>

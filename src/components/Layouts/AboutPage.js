@@ -62,11 +62,11 @@ export default function AboutPage() {
        
        <div className="flex-1 space-y-4">
 
-       <span className="inline-flex items-center gap-2 text-base text-gray-300 uppercase px-8 py-2 bg-black/50 tracking-widest mb-5">
+       <span className="inline-flex items-center gap-2 text-base text-gray-300 uppercase px-8 py-2 bg-[#c89b5c] tracking-widest mb-5">
                More
            </span>
         <h2 className="text-3xl md:text-4xl text-gray-700 font-bold mb-4"> More Than A Photographer, <br />
-          I'm a <span className="text-teal-500"> Storyteller </span> </h2> 
+          I'm a <span className="text-[#c89b5c]"> Storyteller </span> </h2> 
 
      {/* Mobile image Position */}
        <div className="block md:hidden w-full">
@@ -96,7 +96,7 @@ export default function AboutPage() {
       </p>
     
 
-      <button className="px-6 py-3 mt-10 border border-black/30 rounded-xl hover:bg-teal-400 hover:text-black transition">
+      <button className="px-6 py-3 mt-10 border border-black/30 rounded-xl hover:bg-[#c89b5c] hover:text-black transition">
           Download My CV
         </button>
       </div>  
@@ -118,7 +118,7 @@ export default function AboutPage() {
 
   <section className="py-16 px-4 md:px-12 bg-gray-800">
     <div className="text-center max-w-2xl mx-auto mb-12">
-       <span className="text-teal-400 tracking-widest text-base uppercase">
+       <span className="text-[#c89b5c] tracking-widest text-lg uppercase">
          What Drives My Work
        </span>
          <h2 className="text-3xl md:text-5xl text-gray-300 font-bold mb-10">
@@ -152,7 +152,7 @@ export default function AboutPage() {
 
                   {/* Icon */} 
 
-                  <div className="text-teal-400 mb-4">
+                  <div className="text-[#c89b5c] mb-4">
                     <Icon size={50}
                        weight="duotone" />
                   </div>  

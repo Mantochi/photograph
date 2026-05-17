@@ -92,15 +92,15 @@ const Header = () => {
         </h1>
 
         {/* Desktop Links */}
-        <ul className="hidden md:flex space-x-8 text-base tracking-wide">
+        <ul className="hidden md:flex space-x-8 text-lg tracking-wide">
           <NavLink to="/" 
-                 className={`hover:text-teal-400 cursor-pointer ${activeSection === "home" ? "after:absolute after:left-0 after:-bottom-1 after:w-full after:h-[2px] after:text-teal-500" : ""}`}>
+                 className={`hover:text-[#c89b5c] cursor-pointer ${activeSection === "home" ? "after:absolute after:left-0 after:-bottom-1 after:w-full after:h-[2px] after:text-[#c89b5c]" : ""}`}>
                   Home</NavLink>
           <NavLink to="/about" 
-                 className={`hover:text-teal-400 cursor-pointer ${activeSection === "skillset" ? "after:absolute after:left-0 after:-bottom-1 after:w-full after:h-[2px] after:text-teal-500" : ""}`}>
+                 className={`hover:text-[#c89b5c] cursor-pointer ${activeSection === "skillset" ? "after:absolute after:left-0 after:-bottom-1 after:w-full after:h-[2px] after:text-[#c89b5c]" : ""}`}>
                   About Me</NavLink>
           <NavLink to="/portfolio/all" 
-                 className={`hover:text-teal-400 cursor-pointer ${activeSection === "gallery" ? "after:absolute after:left-0 after:-bottom-1 after:w-full after:h-[2px] after:text-teal-500" : ""}`}>
+                 className={`hover:text-[#c89b5c] cursor-pointer ${activeSection === "gallery" ? "after:absolute after:left-0 after:-bottom-1 after:w-full after:h-[2px] after:text-[#c89b5c]" : ""}`}>
                   Gallery</NavLink>
   
         </ul>
@@ -115,21 +115,21 @@ const Header = () => {
 
     {!isHome && (
       <NavLink to="/"> 
-        <House size={32} className="hover:text-teal-400 transition transform hover:scale-110 active:scale-95" />
+        <House size={32} className="hover:text-[#c89b5c] transition transform hover:scale-110 active:scale-95" />
         
       </NavLink>
     )}
 
     {!isAbout && (
       <NavLink to="/about">
-        <UserCircle size={32} className="hover:text-teal-400" />
+        <UserCircle size={32} className="hover:text-[#c89b5c]" />
         
       </NavLink>
     )}
 
     {!isPortfolio && (
       <NavLink to="/portfolio/all">
-        <Image size={32} className="hover:text-teal-400" />
+        <Image size={32} className="hover:text-[#c89b5c]" />
 
       </NavLink>
     )}
@@ -144,7 +144,7 @@ const Header = () => {
       e.preventDefault()
       scrollSec("contact");
     }}
-    className="bg-teal-700 hover:bg-teal-500 px-4 py-2 text-base rounded transition duration-300"
+    className="bg-[#c89b5c] hover:bg-[#db8f23] px-4 py-2 text-lg rounded transition duration-300"
   >
     Book Me
   </a>

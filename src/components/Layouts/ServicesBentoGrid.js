@@ -15,7 +15,7 @@ export default function ServicesBentoGrid() {
   const services = [
 {
 title: "PHOTOGRAPHY",
-desc: "Studio, outdoor and event photography with cinematic quality.",
+desc: "Studio, outdoor & event photography with cinematic quality.",
 icon: Camera,
 className: "col-span-2 md:col-span-2 md:row-span-2",
 iconSize: 150,
@@ -23,39 +23,39 @@ iconColor: "text-amber-600"
 },
 {
 title: "VIDEOGRAPHY",
-desc: "Professional video production for brands and events.",
+desc: "Professional video production for brands & events.",
 icon: VideoCamera,
 className:"md:col-span-1 md:row-span-2",
 iconSize: 120,
-iconColor: "text-yellow-600"
+iconColor: "text-yellow-500"
 },
 {
 title: "EDITING",
-desc: "High-end retouching, color grading and enhancement.",
+desc: "Highend retouching, color grading & enhancement.",
 icon: Image,
 className: "md:col-span-1 md:row-span-2",
 iconSize: 120,
-iconColor: "text-yellow-400"
+iconColor: "text-yellow-500"
 },
 {
 title: "STYLING",
-desc: "Creative direction, wardrobe styling and set preparation.",
+desc: "Creative direction, wardrobe styling & set preparation.",
 icon: Palette,
 className: "md:col-span-2",
 iconSize: 100,
-iconColor: "text-yellow-400"
+iconColor: "text-yellow-500"
 },
 {
 title: "PRINTING",
-desc: "Premium prints, frames and album production.",
+desc: "Premium prints, frames & album production.",
 icon: Printer,
 className: "col-span-2 md:col-span-2",
 iconSize: 100,
-iconColor: "text-yellow-600"
+iconColor: "text-yellow-500"
 },
 {
 title: "RECORDING",
-desc: "Audio recording, podcast sessions and live production.",
+desc: "Audio recording, podcast sessions & live production.",
 icon: Microphone,
 className: "md:col-span-4",
 iconSize: 100,
@@ -72,17 +72,17 @@ return (
 <div className="max-w-7xl mx-auto relative z-10">  
     {/* Heading */}  
     <div className="mb-14 text-left">  
-      <p className="uppercase tracking-[0.3em] text-sm text-white/50 mb-3">  
+      <p className="uppercase font-semibold tracking-[0.3em] text-lg text-[#c89b5c] mb-3">  
         Studio Services  
       </p>  
 
-      <h2 className="text-4xl md:text-6xl  font-serif leading-tight max-w-3xl">  
+      <h2 className="text-4xl md:text-6xl font-serif leading-tight max-w-3xl">  
        What We Can Offer You  
       </h2>  
     </div>  
 
     {/* Bento Grid */}  
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-3 auto-rows-[350px] md:auto-rows-[200px] grid-flow-dense">  
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-2 auto-rows-[350px] md:auto-rows-[200px] grid-flow-dense">  
       {services.map((service, index) => {  
         const Icon = service.icon;  
 
@@ -112,7 +112,7 @@ return (
             </div>  
 
             {/* Content */}  
-            <div className="relative z-10 flex justify-between h-full">  
+            <div className="relative z-10 flex justify-between h-full mb-4">  
               
 
                 <div className=" absolute top-0 right-0 opacity-50">  
@@ -127,8 +127,9 @@ return (
                 </div>   
                 
               
-                <div className="flex flex-col md:px-5 justify-center">
-                <h3 className="text-2xl font-semibold mb-3 text-left">  
+                <div className="flex flex-col md:px-5 mt-5 justify-center">
+                
+                <h3 className="text-2xl font-serif mb-2 pt-5 text-left">  
                   {service.title}  
                 </h3>  
 

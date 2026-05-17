@@ -33,7 +33,7 @@ export default function TestimonialsSection() {
       <div className="relative z-10 md:max-w-7xl mx-auto px-6 md:px-10">
         {/* Heading */}
         <div className="text-center mb-20">
-          <p className="uppercase tracking-[0.35em] text-xs text-neutral-400 mb-4">
+          <p className="uppercase font-bold tracking-[0.35em] text-lg text-[#c89b5c] mb-4">
             Testimonials
           </p>
 
@@ -59,7 +59,7 @@ export default function TestimonialsSection() {
               <Quotes
                 size={38}
                 strokeWidth={2.5}
-                className="text-black mb-8 opacity-90"
+                className="text-[#c89b5c] mb-8 opacity-90"
               />
 
               {/* Testimonial */}
@@ -93,7 +93,7 @@ export default function TestimonialsSection() {
               <Quotes
                 size={34}
                 strokeWidth={2.5}
-                className="text-black mb-6"
+                className="text-[#c89b5c] mb-6"
               />
 
               {/* Text */}

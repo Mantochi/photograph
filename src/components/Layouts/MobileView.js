@@ -85,15 +85,15 @@ const [activeTab, setActiveTab] = useState("All");
   return (
     <section className="md:hidden py-10 bg-gray-900 text-white">
       <div className="md:w-1/2 mb-16 md:mb-0">
-            <p className="text-sm tracking-widest text-gray-400 mb-4">
-              OUR WORK
+            <p className="text-lg tracking-widest text-[#c89b5c] mb-4">
+              EXPLORE OUR WORK
             </p>
 
             <h2 className="text-3xl md:text-5xl font-bold leading-tight mb-6">
               Services Designed For Impactful Visual Storytelling.
             </h2>
 
-            <div className="w-32 h-[1px] bg-gray-600 ml-5 mt-8" />
+            <div className="w-32 h-[1px] bg-[#c89b5c] ml-5 mt-8" />
 
              {/* Tabs */}
           <div className="flex gap-4 justify-center flex-wrap mt-8">
@@ -106,8 +106,8 @@ const [activeTab, setActiveTab] = useState("All");
                   
                   ${
                     activeTab === tab
-                      ? "bg-black text-white"
-                      : "bg-white/40 backdrop-blur-md border border-white/30 text-gray-900 hover:bg-black hover:text-white"
+                      ? "bg-[#c89b5c] text-white"
+                      : "bg-white/40 backdrop-blur-md border border-white/20 text-gray-900 hover:bg-[#c89b5c] hover:text-white"
                   }
                 `}
               >

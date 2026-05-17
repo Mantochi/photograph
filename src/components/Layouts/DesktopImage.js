@@ -69,7 +69,7 @@ export default function DesktopImage() {
       <div className="px-6 md:px-12">
         {/* Heading */}
         <div className="text-center mb-14">
-          <p className="uppercase tracking-[0.3em] text-xs text-neutral-500 mb-4">
+          <p className="uppercase font-semibold tracking-[0.3em] text-lg text-[#c89b5c] mb-4">
             Explore My Work
           </p>
 
@@ -88,8 +88,8 @@ export default function DesktopImage() {
                   
                   ${
                     activeTab === tab
-                      ? "bg-black text-white"
-                      : "bg-white/40 backdrop-blur-md border border-white/30 text-neutral-700 hover:bg-black hover:text-white"
+                      ? "bg-[#c89b5c] text-white"
+                      : "bg-white/40 backdrop-blur-md border border-black/20 text-neutral-700 hover:bg-[#c89b5c] hover:text-white"
                   }
                 `}
               >

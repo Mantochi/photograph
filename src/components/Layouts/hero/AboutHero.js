@@ -23,7 +23,7 @@ const AboutHero = () => {
            </span>
 
       <h1 className="text-5xl font-bold mb-4">
-        Hi, I’m <span className="text-teal-500">Tochi</span>
+        Hi, I’m <span className="text-[#c89b5c]">Tochi</span>
       </h1>
 
       <p className="text-2xl mt-4 text-gray-200 mb-6">
@@ -32,7 +32,7 @@ const AboutHero = () => {
 
       {/* Line */}
 
-       <div className="w-12 h-[2px] bg-teal-500 my-6" />
+       <div className="w-12 h-[2px] text-[#c89b5c] my-6" />
 
       <p className="text-gray-300 text-xl mb-8">
         I capture real moments and turn them into timeless <br /> memories.
@@ -40,11 +40,11 @@ const AboutHero = () => {
       </p>
 
       <div className="flex gap-4 justify-left flex-wrap">
-        <button className="px-6 py-3 bg-teal-600 text-black rounded-xl font-medium hover:bg-teal-400 transition">
+        <button className="px-6 py-3 bg-[#c89b5c] text-black rounded-xl font-medium hover:bg-[#e0a24c] transition">
           View My Work
         </button>
 
-        <button className="px-6 py-3 border border-white/30 rounded-xl hover:bg-white/10 transition">
+        <button className="px-6 py-3 border border-white/30 rounded-xl hover:bg-[#c89b5c] transition">
           Contact Me
         </button>
         </div>
@@ -59,7 +59,7 @@ const AboutHero = () => {
 
         <li className="flex items-center gap-3 group">
           <div className="p-2 rounded-lg group-hover:bg-amber-400/20 transition">
-           <Medal className="text-teal-500" size={40} />
+           <Medal className="text-[#c89b5c]" size={40} />
           </div>
           <div className="flex flex-col">
           <p className="text-xl font-bold">3+ </p>
@@ -70,7 +70,7 @@ const AboutHero = () => {
          
           <li className="flex items-center gap-3 group">
           <div className="p-2 rounded-lg group-hover:bg-amber-400/20 transition">
-           <Camera className="text-teal-500" size={40} />
+           <Camera className="text-[#c89b5c]" size={40} />
           </div>   
           <div className="flex flex-col">
              <p className="text-xl font-bold">150+</p>
@@ -81,7 +81,7 @@ const AboutHero = () => {
          
           <li className="flex items-center gap-3 group">
           <div className="p-2 rounded-lg group-hover:bg-amber-400/20 transition">
-           <Users className="text-teal-500" size={40} />
+           <Users className="text-[#c89b5c]" size={40} />
           </div>   
           <div className="flex flex-col">
           <p className="text-xl font-bold">100+</p>
@@ -92,7 +92,7 @@ const AboutHero = () => {
          
           <li className="flex items-center gap-3 group">
           <div className="p-2 rounded-lg group-hover:bg-amber-400/20 transition">
-           <MapPin className="text-teal-500" size={40} />
+           <MapPin className="text-[#c89b5c]" size={40} />
           </div>
           <div className="flex flex-col">   
           <p className="text-xl font-bold">Abuja,Nigeria</p>
@@ -114,7 +114,7 @@ const AboutHero = () => {
 
         <li className="flex items-center gap-3 group">
           <div className="p-2 rounded-lg group-hover:bg-amber-400/20 transition">
-           <Medal className="text-teal-500" size={40} />
+           <Medal className="text-[#c89b5c]" size={40} />
           </div>
           <div className="flex flex-col">
           <p className="text-xl font-bold">3+ </p>
@@ -125,7 +125,7 @@ const AboutHero = () => {
          
           <li className="flex items-center gap-3 group">
           <div className="p-2 rounded-lg group-hover:bg-amber-400/20 transition">
-           <Camera className="text-teal-500" size={40} />
+           <Camera className="text-[#c89b5c]" size={40} />
           </div>   
           <div className="flex flex-col">
              <p className="text-xl font-bold">150+</p>
@@ -136,7 +136,7 @@ const AboutHero = () => {
          
           <li className="flex items-center gap-3 group">
           <div className="p-2 rounded-lg group-hover:bg-amber-400/20 transition">
-           <Users className="text-teal-500" size={40} />
+           <Users className="text-[#c89b5c]" size={40} />
           </div>   
           <div className="flex flex-col">
           <p className="text-xl font-bold">100+</p>
@@ -147,7 +147,7 @@ const AboutHero = () => {
          
           <li className="flex items-center gap-3 group">
           <div className="p-2 rounded-lg group-hover:bg-amber-400/20 transition">
-           <MapPin className="text-teal-500" size={40} />
+           <MapPin className="text-[#c89b5c]" size={40} />
           </div>
           <div className="flex flex-col">   
           <p className="text-xl font-bold">Abuja,Nigeria</p>
