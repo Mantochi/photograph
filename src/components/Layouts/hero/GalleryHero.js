@@ -15,7 +15,7 @@ const GalleryHero = () => {
                 <h1 className="text-3xl md:text-7xl font-bold mt-4"> 
                     Moments <br /> Captured.</h1>
 
-                    <p className="text-xl font-bold md:text-2xl text-neutral-900 tracking-widest mt-10"> 
+                    <p className="text-xl font-bold md:text-2xl text-gray-300 tracking-widest mt-10"> 
                     A collection of stories, emotions, & memories captured through my lens
                   </p>  
 

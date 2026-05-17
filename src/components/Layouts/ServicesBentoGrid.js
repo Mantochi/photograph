@@ -25,7 +25,7 @@ iconColor: "text-amber-600"
 title: "VIDEOGRAPHY",
 desc: "Professional video production for brands & events.",
 icon: VideoCamera,
-className:"md:col-span-1 md:row-span-2",
+className:"col-span-2 md:col-span-1 md:row-span-2",
 iconSize: 120,
 iconColor: "text-yellow-500"
 },
@@ -49,7 +49,7 @@ iconColor: "text-yellow-500"
 title: "PRINTING",
 desc: "Premium prints, frames & album production.",
 icon: Printer,
-className: "col-span-2 md:col-span-2",
+className: " md:col-span-2",
 iconSize: 100,
 iconColor: "text-yellow-500"
 },
