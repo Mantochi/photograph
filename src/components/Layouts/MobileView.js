@@ -5,19 +5,19 @@ import { galleryData } from "../../data/galleryData";
 
 const categories = {
   All: "all",
-  Landscapes: "landscapes",
-  Portraits: "portraits",
-  Weddings: "weddings",
+  Landscapes: "landscape",
+  Portraits: "portrait",
+  Weddings: "wedding",
   Lifestyle: "lifestyle",
   Commercial: "commercial"
 };
 
 function Mobileview() {
 
-const [activeTab, setActiveTab] = useState("all");
+const [activeTab, setActiveTab] = useState("All");
 
   const filteredItems = useMemo(() => {
-    return activeTab === "all"
+    return activeTab === "All"
       ? Object.values(galleryData).flat()
        : galleryData[categories[activeTab]]
   || [];
