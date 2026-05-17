@@ -1,20 +1,20 @@
 import { useParams, Link } from "react-router-dom";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { galleryData } from "../../data/galleryData";
 
 
 
-export default function PortfolioDesk({ images }) {
+export default function PortfolioDesk() {
   
   const { category } = useParams();
-
-  console.log(category);
   
   const [selectedImage, setSelectedImage] = useState(null);
 
-  const gallery = category === "all"
-  ? Object.values(images).flat()
-  : images[category] || [];
+  const gallery = 
+    category === "all"
+   ? Object.values(galleryData).flat()
+    : galleryData[category?.toLowerCase()] || [];
 
   console.log(gallery);
 
@@ -61,7 +61,7 @@ export default function PortfolioDesk({ images }) {
       {/* Gallery */}
       <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-6 space-y-4">
 
-        {gallery.map((img, index) => (
+        {gallery.map((item, index) => (
 
           <motion.div
             key={index}
@@ -73,8 +73,8 @@ export default function PortfolioDesk({ images }) {
             onClick={() => setSelectedImage(index)}
           >
             <img
-              src={img}
-              alt=""
+              src={item.image}
+              alt={item.alt}
               loading="lazy"
               className="w-full rounded-xl hover:scale-105 transition duration-500"
             />
@@ -132,8 +132,8 @@ export default function PortfolioDesk({ images }) {
           </button>
 
           <motion.img
-            src={gallery[selectedImage]}
-            alt=""
+            src={gallery[selectedImage]?.image}
+            alt={gallery[selectedImage]?.alt}
             className="max-w-[90%] max-h-[90%] rounded-lg"
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}

@@ -1,25 +1,29 @@
-import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import React, { useState, useEffect, useMemo } from "react";
+import { ArrowLeft, ArrowRight } from "phosphor-react";
+import { galleryData } from "../../data/galleryData";
 
-const categories = [
-  "All",
-  "Landscapes",
-  "Portraits",
-  "Weddings",
-  "Lifestyle",
-  "Commercial",
-];
 
-const Mobileview = ({ images }) => {
+const categories = {
+  All: "all",
+  Landscapes: "landscapes",
+  Portraits: "portraits",
+  Weddings: "weddings",
+  Lifestyle: "lifestyle",
+  Commercial: "commercial"
+};
 
-const [activeTab, setActiveTab] = useState("All");
+function Mobileview() {
 
-  const filteredItems =
-    activeTab === "All"
-      ? images
-      : images.filter(
-          (item) => item.category === activeTab
-        );
+const [activeTab, setActiveTab] = useState("all");
+
+  const filteredItems = useMemo(() => {
+    return activeTab === "all"
+      ? Object.values(galleryData).flat()
+       : galleryData[categories[activeTab]]
+  || [];
+  }, [activeTab]);
+
+          
 
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -94,7 +98,7 @@ const [activeTab, setActiveTab] = useState("All");
              {/* Tabs */}
           <div className="flex gap-4 justify-center flex-wrap mt-8">
             
-            {categories.map((tab) => (
+            {Object.keys(categories).map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
@@ -120,7 +124,7 @@ const [activeTab, setActiveTab] = useState("All");
         onTouchEnd={handleTouchEnd}
       >
 
-        {filteredItems.map((img, index) => {
+        {filteredItems.map((item, index) => {
           
 
           const isActive = index === currentIndex;
@@ -159,8 +163,8 @@ const [activeTab, setActiveTab] = useState("All");
 
             <img
               key={index}
-              src={img.src}
-              alt={img.alt}
+              src={item.image}
+              alt={item.alt}
 
               /* VIEW ANIMATION */
               initial={{ opacity: 0, scale: 0.85 }}
@@ -200,32 +204,34 @@ const [activeTab, setActiveTab] = useState("All");
         <button
           onClick={prevSlide}
           className="absolute left-2 top-1/2 transform -translate-y-1/2 z-30
-                     bg-gray-800 text-teal-400 p-2 rounded-full hover:bg-teal-600"
+                     bg-gray-800 text-teal-400 p-2 rounded-full hover:bg-teal-600
+                     w-11 h-11 flex items-center justify-center border border-white/15  transition duration-500 hover:text-black"
         >
-          ◀
+          <ArrowLeft className="w-5 h-5" />
         </button>
 
         {/* Right Arrow */}
         <button
           onClick={nextSlide}
           className="absolute right-2 top-1/2 transform -translate-y-1/2 z-30
-                     bg-gray-800 p-2 rounded-full hover:bg-teal-600"
+                     bg-gray-800 text-teal-400 p-2 rounded-full hover:bg-teal-600
+                     w-11 h-11 flex items-center justify-center border border-white/15  transition duration-500 hover:text-black"
         >
-          ▶
+         <ArrowRight className="w-5 h-5" />
         </button>
       
       </div>
 
 
-      {/* SEE MORE Button */}
+      {/* SEE MORE Button *
       <div className="text-center mt-6">
         <a
-          href={images[currentIndex].link || "#"}
+          href={filteredItems[currentIndex].link || "#"}
           className="px-6 py-2 bg-teal-500 rounded hover:bg-teal-700 transition-colors"
         >
           SEE MORE
         </a>
-      </div>
+      </div> */}
     </section>
   );
 };

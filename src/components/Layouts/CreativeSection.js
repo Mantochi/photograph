@@ -71,7 +71,7 @@ export default function CreativeSection() {
           ref={scrollRef}
           className="
             flex gap-4 overflow-x-auto scrollbar-hide
-            lg:grid lg:grid-cols-3 mb-4
+            lg:grid lg:grid-cols-3 pb-4
           "
         >
           {images.map((img, index) => (

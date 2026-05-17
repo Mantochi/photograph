@@ -27,7 +27,7 @@ desc: "Professional video production for brands and events.",
 icon: VideoCamera,
 className:"md:col-span-1 md:row-span-2",
 iconSize: 120,
-iconColor: "text-green-600"
+iconColor: "text-yellow-600"
 },
 {
 title: "EDITING",
@@ -35,30 +35,30 @@ desc: "High-end retouching, color grading and enhancement.",
 icon: Image,
 className: "md:col-span-1 md:row-span-2",
 iconSize: 120,
-iconColor: "text-green-400"
+iconColor: "text-yellow-400"
 },
 {
 title: "STYLING",
 desc: "Creative direction, wardrobe styling and set preparation.",
 icon: Palette,
 className: "md:col-span-2",
-iconSize: 80,
-iconColor: "text-purple-600"
+iconSize: 100,
+iconColor: "text-yellow-400"
 },
 {
 title: "PRINTING",
 desc: "Premium prints, frames and album production.",
 icon: Printer,
 className: "col-span-2 md:col-span-2",
-iconSize: 80,
-iconColor: "text-purple-400"
+iconSize: 100,
+iconColor: "text-yellow-600"
 },
 {
 title: "RECORDING",
 desc: "Audio recording, podcast sessions and live production.",
 icon: Microphone,
 className: "md:col-span-4",
-iconSize: 90,
+iconSize: 100,
 iconColor: "text-yellow-500"
 },
 ];
@@ -97,7 +97,7 @@ return (
               border border-white/40 
               bg-white/5  
               backdrop-blur-xl  
-              p-4
+              p-3
               transition-all  
               duration-500  
               hover:-translate-y-2  
@@ -115,7 +115,7 @@ return (
             <div className="relative z-10 flex justify-between h-full">  
               
 
-                <div className=" absolute top-0 right-0 opacity-50 rounded-2xl bg-white/10 border border-white/10">  
+                <div className=" absolute top-0 right-0 opacity-50">  
                   <Icon size={service.iconSize} 
                     className={service.iconColor} />  
                   </div>
@@ -127,12 +127,12 @@ return (
                 </div>   
                 
               
-                <div className="flex flex-col px-5 justify-center">
+                <div className="flex flex-col md:px-5 justify-center">
                 <h3 className="text-2xl font-semibold mb-3 text-left">  
                   {service.title}  
                 </h3>  
 
-                <p className="text-white/60 leading-relaxed max-w-sm text-left">  
+                <p className="text-white/60 leading-relaxed max-w-sm text-left text-lg">  
                   {service.desc}  
                 </p>  
 
