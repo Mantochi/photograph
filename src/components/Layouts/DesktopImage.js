@@ -84,7 +84,7 @@ export default function DesktopImage() {
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-5 py-2 rounded-full text-sm uppercase tracking-[0.2em] transition-all duration-300
+                className={`px-5 py-2 rounded-full text-lg uppercase tracking-[0.2em] transition-all duration-300
                   
                   ${
                     activeTab === tab
