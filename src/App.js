@@ -3,6 +3,7 @@ import './App.css';
 import Home from './pages/Home';
 import Portfolio from './pages/Portfolio';
 import About from './pages/About';
+import Contact from './pages/Contact';
 
 function App() {
   
@@ -12,6 +13,7 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path='/about' element={<About />} />
       <Route path="/portfolio/:category" element={<Portfolio />} />
+      <Route path='/contact' element={<Contact />} />
       
     </Routes>
   );

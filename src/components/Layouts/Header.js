@@ -19,40 +19,7 @@ const Header = () => {
         const lastScrollY = useRef(0);
 
       
-  const [activeSection, setActiveSection] = useState("home");
-
-  const scrollSec = (id) => {
-    document.getElementById(id)?.scrollIntoView({
-      behavior: "smooth"
-    });
-  };
-
-
-  useEffect(() => {
-    const sections =
-     document.querySelectorAll("section");
-
-
-    const handleScroll = () => {
-      let current = ["home"];
-
-
-      sections.forEach((section) => {
-        const top = section.offsetTop - 100;
-        if (window.scrollY >= top) {
-          current = section.getAttribute("id");
-        }
-      });
-
-            setActiveSection(current);
-        };
-  
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
+  const [ activeSection ] = useState("home");
 
 
   useEffect(() => {
@@ -138,16 +105,11 @@ const Header = () => {
   </div>
 
   {/* CTA LAST */}
-  <a
-    href="#contact"
-    onClick={(e) => {
-      e.preventDefault()
-      scrollSec("contact");
-    }}
+  <NavLink to="/contact"
     className="bg-[#c89b5c] hover:bg-[#db8f23] px-4 py-2 text-lg rounded transition duration-300"
   >
     Book Me
-  </a>
+  </NavLink>
 
 </div>
           

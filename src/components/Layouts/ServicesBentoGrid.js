@@ -34,7 +34,7 @@ title: "EDITING",
 desc: "Highend retouching, color grading & enhancement.",
 icon: Image,
 className: "md:col-span-1 md:row-span-2",
-iconSize: 120,
+iconSize: 100,
 iconColor: "text-yellow-500"
 },
 {
