@@ -13,6 +13,7 @@ const Header = () => {
     const isHome = location.pathname === "/";
      const isAbout = location.pathname.includes("/about");
       const isPortfolio = location.pathname.includes("/portfolio");
+      const isContact = location.pathname.includes("/contact");
     
 
       const [showNav, setShowNav] = useState(true);
@@ -105,12 +106,14 @@ const Header = () => {
   </div>
 
   {/* CTA LAST */}
-  <NavLink to="/contact"
-    className="bg-[#c89b5c] hover:bg-[#db8f23] px-4 py-2 text-lg rounded transition duration-300"
-  >
-    Book Me
-  </NavLink>
 
+  {!isContact && (
+  <NavLink to="/contact"
+    className="bg-[#c89b5c] hover:bg-[#db8f23] px-2 py-1 text-lg rounded transition duration-300"
+  >
+    BOOK ME
+  </NavLink>
+)}
 </div>
           
     
