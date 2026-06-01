@@ -33,13 +33,13 @@ export default function PortfolioDesk() {
      
       <h1 className="text-4xl md:text-5xl font-semibold capitalize mb-10">
         {category === "all"
-        ? "Gallery"
+        ? ""
          : `${category.charAt(0).toUpperCase() + category.slice(1)} Photography`}
       </h1>
 
         <div className="flex gap-4 justify-center flex-wrap mt-8">
         
-     {["all", "portrait", "landscape", "wedding", "commercial", "lifestyle"].map((cat) => (
+     {["all", "portrait", "landscape", "wedding", "lifestyle", "commercial"].map((cat) => (
        <Link
         key={cat}
         to={`/portfolio/${cat}`}
@@ -62,7 +62,7 @@ export default function PortfolioDesk() {
          )}
 
       {/* Gallery */}
-      <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-6 space-y-4">
+      <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-6 space-y-4 mt-10">
 
         {gallery.map((item, index) => (
 

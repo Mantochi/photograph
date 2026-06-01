@@ -12,7 +12,7 @@ const GalleryHero = () => {
                 <p className="text-2xl text-[#c89b5c] uppercase tracking-widest"> 
                     My Work
                   </p>
-                <h1 className="text-3xl md:text-7xl font-bold mt-4"> 
+                <h1 className="text-7xl font-bold mt-4"> 
                     Moments <br /> Captured.</h1>
 
                     <p className="text-xl font-bold md:text-2xl text-gray-300 tracking-widest mt-10"> 

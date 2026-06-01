@@ -65,7 +65,7 @@ export default function AboutPage() {
        <span className="inline-flex items-center gap-2 text-base text-gray-300 uppercase px-8 py-2 bg-[#c89b5c] tracking-widest mb-5">
                More
            </span>
-        <h2 className="text-3xl md:text-4xl text-gray-700 font-bold mb-4"> More Than A Photographer, <br />
+        <h2 className="text-3xl md:text-4xl text-gray-700 font-bold mb-4">More Than A Photographer,<br />
           I'm a <span className="text-[#c89b5c]"> Storyteller </span> </h2> 
 
      {/* Mobile image Position */}
